@@ -23,11 +23,13 @@ Curator would provide broader access to art and more information on each piece s
 A **Curator** has
 *  username
 
+
 An **Artist** has
 *  name
 *  lifespan
 *  nationality
 *  style
+
 
 An **Artwork** has
 *  title
