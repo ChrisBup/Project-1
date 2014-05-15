@@ -23,7 +23,7 @@ Curator would provide broader access to art and more information on each piece s
 A **Curator** has
 *  username
 
- An **Artist** has
+An **Artist** has
 *  name
 *  lifespan
 *  nationality
@@ -37,14 +37,16 @@ An **Artwork** has
 *  theme
 *  artist_id
 
-## Wireframes
-
 ##Documentation Links:
 
 https://artsyapi.com/
+
 http://artsy.github.io/
+
 http://mass.artsy.net/api/v1/docs/index
+
 https://github.com/artsy/artsy-ruby-client
+
 http://en.wikipedia.org/wiki/The_Art_Genome_Project
 
 ##Heroku:
