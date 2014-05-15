@@ -41,11 +41,11 @@ An **Artwork** has
 
 ##Wireframes
 
-(/wireframes/p1wf1.JPG)
+![Alt text](/wireframes/p1wf1.JPG)
 
-(/wireframes/p1wf2.JPG)
+![Alt text](/wireframes/p1wf2.JPG)
 
-(/wireframes/p1wf3.JPG)
+![Alt text](/wireframes/p1wf3.JPG)
 
 ##Documentation Links:
 
