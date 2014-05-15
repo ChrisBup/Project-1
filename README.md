@@ -39,6 +39,14 @@ An **Artwork** has
 *  theme
 *  artist_id
 
+##Wireframes
+
+(/wireframes/p1wf1.JPG)
+
+(/wireframes/p1wf2.JPG)
+
+(/wireframes/p1wf3.JPG)
+
 ##Documentation Links:
 
 https://artsyapi.com/
