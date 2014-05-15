@@ -21,24 +21,21 @@ Curator would provide broader access to art and more information on each piece s
 ## Data Model:
 
 A **Curator** has
-*  username  
-  
+*  username
 
-An **Artist** has
+   An **Artist** has
 *  name
 *  lifespan
 *  nationality
-*  style  
-  
+*  style
 
-An **Artwork** has
+   An **Artwork** has
 *  title
 *  date
 *  style
 *  medium
 *  theme
-*  artist_id  
-  
+*  artist_id
 
 ##Wireframes
 
