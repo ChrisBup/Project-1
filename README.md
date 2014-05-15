@@ -1,4 +1,4 @@
-== App Name: Curator
+# App Name: Curator
 
 ## Resources: Artsy API
 
