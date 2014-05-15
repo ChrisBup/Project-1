@@ -16,7 +16,7 @@ Curator harnesses Artsy's resources to allow anyone to curate their very own art
 
 The problem Curator solves is the difficulty people have with appreciating art. When we go to a gallery or search for art online, we're presented with a limited range of work connected only by traditional categories like period or style. You see the name of the artist, when the work was created, and that's generally it.  
 
-Curator would provide broader access to art and more information on each piece so that you can understand the context more fully and divine your own meaning from it. You can connect it with other works in more ways, interact with it how you want, and appreciate it on a deeper level. It's not about the facts around a work of art but the questions: what is the purpose of this piece? What is it saying? How is it relevant to you? What is it trying to get you to think about?
+Curator would provide broader access to art and more information on each piece so that you can understand the context more fully and divine your own meaning from it. You can connect it with other works in more ways, interact with it how you want, and appreciate it on a deeper level. It's not about the facts around a work of art but the questions: what is the purpose of this artwork? How is it relevant to you? What is it trying to get you to think about?
 
 ## Data Model:
 
