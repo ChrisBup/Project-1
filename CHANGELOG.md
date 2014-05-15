@@ -1,4 +1,4 @@
-###5.5.14 (w04_d04)
+###5.5.14
 request Artsy API, awaiting reply  
 project plan deliverables
 * research/resources
