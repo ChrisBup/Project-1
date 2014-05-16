@@ -27,18 +27,21 @@ Curator would provide broader access to art and more information on each piece s
 | Artist          |
 | ----------------| 
 | name            |
-| lifespan        |
+| dates           |
 | nationality     |
-| bio             |
 
 | Artwork         |
 | ----------------| 
-| title           |
-| date            |
-| style           |
-| medium          |
-| theme           |
-| artist_id       |
+| image_url       |
+| caption         |
+| file_source     |
+| series          |
+
+| Collection      |
+| ----------------| 
+| curator_id      |
+| artwork_id      |
+| name            |
 
 ##Wireframes
 
