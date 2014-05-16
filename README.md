@@ -2,7 +2,7 @@
 
 ## Resources: Artsy API
 
-The Artsy API was developed as part of the Art Genome Project, which is a long-term research effort to map the characteristics of works of art that define, distinguish, and connect them using a digital analytics system. The service describes works of art via combinations of 900+ "genes" that identify attributes such as associated movements within art history, subject matter, and formal qualities like media, materials, and techniques. 
+The Artsy API was developed as part of the Art Genome Project, which is a long-term research effort to map the characteristics of works of art that define, distinguish, and connect them using a digital analytics system. The service describes works of art via combinations of 1,000+ "genes" that identify attributes such as associated movements within art history, subject matter, formal qualities, even eye contact.
 
 API methods support multi-faceted search against the accumulated database of artwork descriptions. Methods support submission of search queries specifying combinations of the characteristics defined in the Art Genome. Methods also allow browse access to listings for exhibitions in which artworks have been displayed as well as search for specific collections of art.
 
