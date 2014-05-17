@@ -1,8 +1,17 @@
 # App Name: Curator
 
-## App Research/Concept
+#### Resources/Gems:
 
-#### Resource: Brooklyn Museum API
+Brooklyn Museum API
+
+rspec
+httparty
+font-awesome
+rails_12factor
+
+skeleton
+
+## Research/Concept
 
 Curator accesses Brooklyn Museum's collection of over 100,000 works of art to allow anyone to curate their very own art collection online. It allows people to discover, collect, and share artwork.
 
