@@ -1,0 +1,14 @@
+<h2><% @collection.name %></h2>
+
+<h3><a href="new_collection_path">Start Another Collection</a></h3>
+<br>
+<form action="/collections/<%= @collection.id %>/edit" method='put'>
+  <%= token_tag %>
+  <button type='submit'>Rename Collection</button>
+</form>
+<br>
+<form action="/collections/<%= @collection.id %>" method='post'>
+  <%= token_tag %>
+  <input type="hidden" name='_method' value='delete'>
+  <button type='submit'>Delete Collection</button>
+</form>

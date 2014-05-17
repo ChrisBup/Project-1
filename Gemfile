@@ -38,6 +38,10 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'httparty'
+gem 'font-awesome-rails'
+gem 'rails_12factor', group: :production
+
 group :development, :test do
  gem 'pry'
  gem 'pry-nav'

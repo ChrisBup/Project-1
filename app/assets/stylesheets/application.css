@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+*= require base
+*= require layout
+*= require skeleton
+*= require font-awesome
+*/
+

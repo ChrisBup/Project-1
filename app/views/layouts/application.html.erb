@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class='container'>
+    <%= link_to "Collections", collections_path %>
+    <%= link_to "Curators", curators_path %>
+    <%= link_to "Become a Curator", new_curator_path %>
+    <%= yield %>
+  </div>
 </body>
 </html>
