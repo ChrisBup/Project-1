@@ -44,7 +44,7 @@ class CuratorsController < ApplicationController
   private
 
   def curator_params
-    params.require(:curator).permit(:username, :password_confirmation)
+    params.require(:curator).permit(:username, :password, :password_confirmation)
   end
 
 end
