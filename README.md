@@ -1,55 +1,62 @@
 # App Name: Curator
 
-## Resources: Artsy API
+#### Resources/Gems:
 
-The Artsy API was developed as part of the Art Genome Project, which is a long-term research effort to map the characteristics of works of art that define, distinguish, and connect them using a digital analytics system. The service describes works of art via combinations of 900+ "genes" that identify attributes such as associated movements within art history, subject matter, and formal qualities like media, materials, and techniques. 
+Brooklyn Museum API
 
-API methods support multi-faceted search against the accumulated database of artwork descriptions. Methods support submission of search queries specifying combinations of the characteristics defined in the Art Genome. Methods also allow browse access to listings for exhibitions in which artworks have been displayed as well as search for specific collections of art.
+rspec
+httparty
+font-awesome
+rails_12factor
 
-Importantly, unlike tags, which are binary, genes are applied with values ranging from 0 to 100, indicating the degree of relevance. This enables similarity to be expressed in a more nuanced way and allows for better suggestions based on tastes and preferences.
+skeleton
 
-## App Research/Concept:
+## Research/Concept
 
-Artsy provides search access to images and information about artworks allowing anyone to discover, research, and collect art online. It's a growing collection of 140,000+ artworks by 25,000+ artists from prominent galleries, museums, private collections, and art fairs worldwide.
+Curator accesses Brooklyn Museum's collection of over 100,000 works of art to allow anyone to curate their very own art collection online. It allows people to discover, collect, and share artwork.
 
-Curator harnesses Artsy's resources to allow anyone to curate their very own art collection online. It allows people to discover, collect, and share artwork as well as make connections between different works of art.
-
-The problem Curator solves is the difficulty people have with appreciating art. When we go to a gallery or search for art online, we're presented with a limited range of work connected only by traditional categories like period or style. You see the name of the artist, when the work was painted, and that's generally it.  
-
-Curator would provide broader access to art and more information on each piece so that you can understand the context more fully and divine your own meaning from it. You can interact with it in more ways and appreciate it on a deeper level. It's not about the facts around a work of art but the questions: what is the purpose of this piece? What is it saying? How is it relevant to you? What is it trying to get you to think about?
+The problem Curator solves is the limited access to the Brooklyn Museum collection in any given visit. By being able to search their entire archive, whether or not the piece is on view, as well as keep track of favorite pieces, one can curate their very own collection to share.
 
 ## Data Model:
 
-A **Curator** has
-*  username
+| Curator         |
+| ----------------|
+| username        |
 
+| Artist          |
+| ----------------| 
+| name            |
+| dates           |
+| nationality     |
 
-An **Artist** has
-*  name
-*  lifespan
-*  nationality
-*  style
+| Artwork         |
+| ----------------| 
+| image_url       |
+| caption         |
+| file_source     |
+| series          |
 
+| Collection      |
+| ----------------| 
+| curator_id      |
+| artwork_id      |
+| name            |
 
-An **Artwork** has
-*  title
-*  date
-*  style
-*  medium
-*  theme
-*  artist_id
+##Wireframes
+
+![Alt text](/wireframes/p1wf1.JPG)
+
+![Alt text](/wireframes/p1wf2.JPG)
+
+![Alt text](/wireframes/p1wf3.JPG)
 
 ##Documentation Links:
 
-https://artsyapi.com/
+http://www.brooklynmuseum.org/opencollection/api/
 
-http://artsy.github.io/
+https://github.com/brooklynmuseum/brooklynmuseum-api-examples
 
-http://mass.artsy.net/api/v1/docs/index
-
-https://github.com/artsy/artsy-ruby-client
-
-http://en.wikipedia.org/wiki/The_Art_Genome_Project
+base URL: http://www.brooklynmuseum.org/opencollection/api/oai.pmh.php?api-key=[Your-API-Key]
 
 ##Heroku:
 
