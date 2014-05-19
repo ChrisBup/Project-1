@@ -1,11 +1,11 @@
 class CollectionsController < ApplicationController
 
-#     curator_collections GET    /curators/:curator_id/collections(.:format)          collections#index
+#  curator_collections GET    /curators/:curator_id/collections(.:format)          collections#index
   def index
     @collections = Collection.all
   end
 
-#                         POST   /curators/:curator_id/collections(.:format)          collections#create
+#  POST   /curators/:curator_id/collections(.:format)          collections#create
   def create
     curator = Curator.find(params[:curator_id])
     collection = Collection.create(collection_params)
@@ -23,13 +23,14 @@ class CollectionsController < ApplicationController
     @curator = Curator.find(params[:curator_id])
     @collection = Collection.find(params[:id])
   end
-#      curator_collection GET    /curators/:curator_id/collections/:id(.:format)      collections#show
+
+# curator_collection GET    /curators/:curator_id/collections/:id(.:format)      collections#show
   def show
     @collection = Collection.find(params[:id])
   end
 
-#                         PATCH  /curators/:curator_id/collections/:id(.:format)      collections#update
-#                         PUT    /curators/:curator_id/collections/:id(.:format)      collections#update
+#  PATCH  /curators/:curator_id/collections/:id(.:format)      collections#update
+#  PUT    /curators/:curator_id/collections/:id(.:format)      collections#update
   def update
     curator = Curator.find(params[:curator_id])
     collection = Collection.find(params[:id])
@@ -37,11 +38,11 @@ class CollectionsController < ApplicationController
     redirect_to "/curators/#{curator.id}"
   end
 
-#                         DELETE /curators/:curator_id/collections/:id(.:format)      collections#destroy
+#  DELETE /curators/:curator_id/collections/:id(.:format)      collections#destroy
   def destroy
     curator = Curator.find(params[:curator_id])
     Collection.delete(params[:id])
-    redirect_to "/curators/#{curator.id}"
+    redirect_to "/curators"
   end
 
   private

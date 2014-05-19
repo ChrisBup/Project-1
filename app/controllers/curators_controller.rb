@@ -23,6 +23,7 @@ class CuratorsController < ApplicationController
  #      curator GET    /curators/:id(.:format)                              curators#show
   def show
     @curator = Curator.find(params[:id])
+    @collections = @curator.collections
   end
 
  #              PATCH  /curators/:id(.:format)                              curators#update
