@@ -4,10 +4,10 @@
 
 Brooklyn Museum API
 
-rspec
-httparty
-font-awesome
-rails_12factor
+rspec  
+httparty  
+font-awesome  
+rails_12factor  
 
 skeleton
 
@@ -50,13 +50,9 @@ The problem Curator solves is the limited access to the Brooklyn Museum collecti
 
 ![Alt text](/wireframes/p1wf3.JPG)
 
-##Documentation Links:
+##Documentation:
 
 http://www.brooklynmuseum.org/opencollection/api/
-
-https://github.com/brooklynmuseum/brooklynmuseum-api-examples
-
-base URL: http://www.brooklynmuseum.org/opencollection/api/oai.pmh.php?api-key=[Your-API-Key]
 
 ##Heroku:
 
