@@ -10,12 +10,13 @@ class CollectionsController < ApplicationController
     curator = Curator.find(params[:curator_id])
     collection = Collection.create(collection_params)
     Curator.collections << collection
-    redirect_to "/curators/#{curator.id}"
+    redirect_to curator_collections_path(collection)
   end
 
 #  new_curator_collection GET    /curators/:curator_id/collections/new(.:format)      collections#new
   def new
     @curator = Curator.find(params[:curator_id])
+    @collection = Collection.new
   end
 
 # edit_curator_collection GET    /curators/:curator_id/collections/:id/edit(.:format) collections#edit
@@ -35,14 +36,14 @@ class CollectionsController < ApplicationController
     curator = Curator.find(params[:curator_id])
     collection = Collection.find(params[:id])
     collection.update(collection_params)
-    redirect_to "/curators/#{curator.id}"
+    redirect_to curator_collection_path(collection)
   end
 
 #  DELETE /curators/:curator_id/collections/:id(.:format)      collections#destroy
   def destroy
     curator = Curator.find(params[:curator_id])
     Collection.delete(params[:id])
-    redirect_to "/curators"
+    redirect_to curator_collections_path(curator)
   end
 
   private

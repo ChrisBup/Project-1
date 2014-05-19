@@ -8,11 +8,12 @@ class CuratorsController < ApplicationController
  #              POST   /curators(.:format)                                  curators#create
   def create
     curator = Curator.create(curator_params)
-    redirect_to "/curators/#{curator.id}"
+    redirect_to curator_path(curator)
   end
 
   # new_curator GET    /curators/new(.:format)                              curators#new
   def new
+    @curator = Curator.new
   end
 
  # edit_curator GET    /curators/:id/edit(.:format)                         curators#edit
@@ -31,19 +32,19 @@ class CuratorsController < ApplicationController
   def update
     curator = Curator.find(params[:id])
     curator.update(curator_params)
-    redirect_to "/curators/#{curator.id}"
+    redirect_to curator_path(curator)
   end
 
  #              DELETE /curators/:id(.:format)                              curators#destroy
   def destroy
     Curator.delete(params[:id])
-    redirect_to "/curators"
+    redirect_to curators_path
   end
 
   private
 
   def curator_params
-    params.require(:curator).permit(:username)
+    params.require(:curator).permit(:username, :password_confirmation)
   end
 
 end

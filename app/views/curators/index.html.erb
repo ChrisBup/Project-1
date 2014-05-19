@@ -1,9 +1,19 @@
 <h2>Curators</h2>
 
-<% @curators.each do |curator| %>
-  <ul>
+<% if current_curator %>
+  <p>
+    Welcome, <%= current_curator.username %>
+  </p>
+  <%= link_to "LOG-OUT", log_out_path, method: :delete %>
+<% else%>
+  <%= link_to "LOG-IN", log_in_path %>
+  <%= link_to "SIGN-UP", new_curator_path %>
+<% end %>
+
+<ul>
+  <% @curators.each do |curator| %>
     <li>
       <%= curator.username %>
     </li>
-  </ul>
-<% end %>
+  <% end %>
+</ul>

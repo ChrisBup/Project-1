@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div>
+  <h1>
+    <%= flash.now[:alert] %>
+  </h1>
+  <h1>
+    <%= flash.now[:notice] %>
+  </h1>
+  </div>
   <div class='container'>
-    <%= erb :nav %>
+    <%= link_to "Curators", curators_path %>
+    <%= link_to "Become a Curator", new_curator_path %>
     <%= yield %>
   </div>
 </body>
