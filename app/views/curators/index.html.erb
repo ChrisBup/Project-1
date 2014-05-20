@@ -1,9 +1,11 @@
-<h2>Curators</h2>
+<h2>CURATORS</h2>
 
 <% if current_curator %>
   <p>
     Welcome, <%= current_curator.username %>
   </p>
+  <%= link_to "START A NEW COLLECTION", artworks_new_path %>
+  <%= link_to "VIEW COLLECTIONS", curator_collections_path %>
   <%= link_to "LOG-OUT", log_out_path, method: :delete %>
 <% else%>
   <%= link_to "LOG-IN", log_in_path %>
@@ -13,7 +15,7 @@
 <ul>
   <% @curators.each do |curator| %>
     <li>
-      <%= curator.username %>
+      <a href='/curators/<%= curator.id %>'><%= curator.username %></a>
     </li>
   <% end %>
 </ul>

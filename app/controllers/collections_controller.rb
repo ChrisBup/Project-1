@@ -27,6 +27,7 @@ class CollectionsController < ApplicationController
 
 # curator_collection GET    /curators/:curator_id/collections/:id(.:format)      collections#show
   def show
+    @curator = Curator.find(params[:curator_id])
     @collection = Collection.find(params[:id])
   end
 

@@ -21,21 +21,21 @@ class CuratorsController < ApplicationController
     @curator = Curator.find(params[:id])
   end
 
- #      curator GET    /curators/:id(.:format)                              curators#show
+ # curator GET    /curators/:id(.:format)                              curators#show
   def show
     @curator = Curator.find(params[:id])
-    @collections = @curator.collections
+    @collection = Collection.all
   end
 
- #              PATCH  /curators/:id(.:format)                              curators#update
- #              PUT    /curators/:id(.:format)                              curators#update
+ # PATCH  /curators/:id(.:format)                              curators#update
+ # PUT    /curators/:id(.:format)                              curators#update
   def update
     curator = Curator.find(params[:id])
     curator.update(curator_params)
     redirect_to curator_path(curator)
   end
 
- #              DELETE /curators/:id(.:format)                              curators#destroy
+ # DELETE /curators/:id(.:format)                              curators#destroy
   def destroy
     Curator.delete(params[:id])
     redirect_to curators_path

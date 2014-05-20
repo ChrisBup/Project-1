@@ -1,5 +1,4 @@
 class Collection < ActiveRecord::Base
-  t.references :curator
-  t.references :artwork
-  t.string :name
+  belongs_to :curator
+  has_many :artworks
 end

@@ -1,0 +1,14 @@
+<h3>Search Results</h3>
+
+<ul>
+  <% @artwork.each do |frame| %>
+    <li>
+      <div class='frame'>
+        <img src="<%= @image_url %>" alt="<%= @title%>">
+        <%= @title%>
+        <%= @artist %>
+        <%= @dates %>
+      </div>
+    </li>
+  <% end %>
+</ul>

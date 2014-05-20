@@ -1,11 +1,4 @@
-<h2>Rename Your Collection</h2>
+<h2>RENAME YOUR COLLECTION</h2>
 <%= render 'form' %>
 
-<h2>Add to Your Collection</h2>
-
-<form action="/" method='post'>
-  <%= token_tag %>
-  <input type='hidden' name='_method' value='put'>
-  <input type="text" name='keyword' placeholeder='artist name'>
-  <input type="submit">
-</form>
+<%= link_to "ADD TO YOUR COLLECTION", new_artworks_path %>

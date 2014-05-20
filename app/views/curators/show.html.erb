@@ -1,7 +1,7 @@
-<h2>Welcome, <% @curator.username %></h2>
+<h1>Welcome, <% @curator.username %></h1>
 
-<% if @collections.length > 0 %>
-  <h3>Your Collections</h3>
+<% if @collections.to_i > 0 %>
+  <h3>YOUR COLLECTIONS</h3>
   <ul>
     <% @collections.each do %>
       <li>
@@ -13,19 +13,16 @@
   </ul>
 <% end %>
 
-<h3><a href="new_collection_path">Start Your Collection</a></h3>
-<br>
-
-<%= link_to "Start a Collection", new_collection_path %>
+<%= link_to "START A COLLECTION", new_curator_collection_path(curator) %>
 
 <form action="/curators/<%= @curator.id %>/edit" method='put'>
   <%= token_tag %>
-  <button type='submit'>Rename Curator</button>
+  <button type='submit'>RENAME CURATOR</button>
 </form>
 <br>
 
 <form action="/curators/<%= @curator.id %>" method='post'>
   <%= token_tag %>
   <input type="hidden" name='_method' value='delete'>
-  <button type='submit'>Delete Curator</button>
+  <button type='submit'>DELETE CURATOR</button>
 </form>
