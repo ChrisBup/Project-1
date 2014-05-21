@@ -5,11 +5,8 @@ Rails.application.routes.draw do
 
   resources :artworks, only: [:new, :create, :search, :results, :show]
 
-  get '/search' => 'artwork#new'
-  post '/search' => 'artwork#search'
-  get '/results' => 'artwork#results'
-  post '/create' => 'artwork#create'
-  get '/show' => 'artwork#show'
+  get '/search' => 'artworks#new' # Where my form is
+  get '/results' => 'artworks#results' # Where my form sends me; where my form results are
 
   root 'curators#index'
 

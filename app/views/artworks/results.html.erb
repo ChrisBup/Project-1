@@ -1,23 +1,23 @@
 <h3>Search Results</h3>
-
+<h2><%= @artworks.count %>. LUCKY GUY!</h2>
 <ul>
-  <% @artwork.each do |art| %>
+  <% @artworks.each do |art| %>
     <li>
       <div class='frame'>
         <img src="<%= @image_uri %>" alt="<%= @title %>">
-        <%= @total %>
-        <%= @title %>
-        <%= @object_date %>
-        <%= @medium %>
-        <%= @label %>
-        <%= @collection %>
-        <%= @description %>
-        <%= @bk_uri %>
-        <%= @artist_name %>
-        <%= @artist_dates %>
+        <p><%= art.title %></p>
+        <p><%= art.object_date %></p>
+        <p><%= art.medium %></p>
+        <p><%= art.label %></p>
+        <p><%= art.description %></p>
+        <p><%= art.bk_uri %></p>
+
       </div>
-      <button type='submit'>ADD TO YOUR COLLECTION</button>
-        <% @collection << art %>
+      <%= form_for @artwork do |f| %>
+      <%= f.hidden_field :caption, value: art.title %>
+      <%= f.hidden_field :image_url, value: art.bk_uri %>
+      <%= f.submit "ADD TO YOUR COLLECTION" %>
+      <% end %>
     </li>
   <% end %>
 </ul>

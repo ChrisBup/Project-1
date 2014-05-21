@@ -4,8 +4,8 @@
   <p>
     Welcome, <%= current_curator.username %>
   </p>
-  <%= link_to "START A NEW COLLECTION", artworks_new_path %>
-  <%= link_to "VIEW COLLECTIONS", curator_collections_path %>
+  <%= link_to "START A NEW COLLECTION", new_artwork_path %>
+  <%= link_to "VIEW COLLECTIONS", curator_collections_path(current_curator) %>
   <%= link_to "LOG-OUT", log_out_path, method: :delete %>
 <% else%>
   <%= link_to "LOG-IN", log_in_path %>
