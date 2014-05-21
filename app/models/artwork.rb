@@ -1,22 +1,30 @@
 class Artwork < ActiveRecord::Base
-  belongs_to_many :curators, through: :collections
+  has_many :curators, through: :collections
   belongs_to :artist
 
   def self.find(keyword)
     keyword = keyword.gsub(' ', '%20')
-    url = "http://www.brooklynmuseum.org/opencollection/api/?method=collection.search&api_key=DMM628ShA4&keyword=" + keyword
-    response = HTTParty.get(url)
-    @title = response['title']
-    @artist = response['artist']
-    @dates = response['dates']
-    item_id = response['item_id']
+    url = "http://www.brooklynmuseum.org/opencollection/api/?method=collection.search&version=1&api_key=#{api_key}&keyword=" + keyword
+    result = HTTParty.get(url)
+    @total = result["response"]["resultset"]["total"]
+    result["response"]["resultset"]["items"]["object"].map do |x|
+      @title = x["title"]
+      @object_date = x["object_date"]
+      @medium = x["medium"]
+      @label = x["label"]
+      @collection = x["collection"]
+      @description = x["description"]
+      @image_uri = x["images"]["image"]["uri"]
+      @bk_uri = x["uri"]
+      x["artists"].map do |z|
+        @artist_name = z["name"]
+        @artist_dates = z["dates"]
+      end
+    end
   end
 
-  def self.image(keyword)
-    keyword = keyword.gsub(' ', '%20')
-    url = "http://www.brooklynmuseum.org/opencollection/api/?version=1&include_image_caption=true&include_item_fields=false&format=json&item_type=exhibition&item_id=#{item_id}&start_index=0&results_limit=10&method=collection.getImages&api_key=DMM628ShA4"
-    response = HTTParty.get(url)
-    @image_url = response['url']
+  def self.api_key
+    ENV.fetch('BK_MUSEUM_KEY')
   end
 
 end

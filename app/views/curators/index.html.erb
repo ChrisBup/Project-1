@@ -16,6 +16,12 @@
   <% @curators.each do |curator| %>
     <li>
       <a href='/curators/<%= curator.id %>'><%= curator.username %></a>
+      <br>
+      <form action="/curators/<%= @curators.each %>" method='post'>
+        <%= token_tag %>
+        <input type="hidden" name='_method' value='delete'>
+        <button type='submit'>DELETE CURATOR</button>
+      </form>
     </li>
   <% end %>
 </ul>

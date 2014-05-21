@@ -9,8 +9,8 @@ class CollectionsController < ApplicationController
   def create
     curator = Curator.find(params[:curator_id])
     collection = Collection.create(collection_params)
-    Curator.collections << collection
-    redirect_to curator_collections_path(collection)
+    curator.collections << collection
+    redirect_to curator_collections_path(curator)
   end
 
 #  new_curator_collection GET    /curators/:curator_id/collections/new(.:format)      collections#new

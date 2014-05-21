@@ -1,7 +1,7 @@
 <h3>Find Artwork</h3>
 
-<form action="/artwork/show" method='post'>
+<form action="/artworks" method='post'>
   <%= token_tag %>
-  ARTIST<input type="text" name='artwork[keyword]' placeholder='required'>
+  ARTIST<input type="text" name='artwork[keyword]'>
   <input type="submit">
 </form>

@@ -1,4 +1,5 @@
-<h1>Welcome, <% @curator.username %></h1>
+<h1>Welcome, <%= @curator.username %></h1>
+<%= link_to "LOG-OUT", log_out_path, method: :delete %>
 
 <% if @collections.to_i > 0 %>
   <h3>YOUR COLLECTIONS</h3>
@@ -13,16 +14,10 @@
   </ul>
 <% end %>
 
-<%= link_to "START A COLLECTION", new_curator_collection_path(curator) %>
+<%= link_to "START A COLLECTION", new_curator_collection_path(@curator) %>
 
 <form action="/curators/<%= @curator.id %>/edit" method='put'>
   <%= token_tag %>
   <button type='submit'>RENAME CURATOR</button>
 </form>
 <br>
-
-<form action="/curators/<%= @curator.id %>" method='post'>
-  <%= token_tag %>
-  <input type="hidden" name='_method' value='delete'>
-  <button type='submit'>DELETE CURATOR</button>
-</form>
