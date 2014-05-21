@@ -68,7 +68,6 @@
 /* #Basic Styles
 ================================================== */
 	body {
-		background: ##ff3344;
 		font: 14px/21px 'Quicksand', Helvetica, sans-serif;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
