@@ -23,18 +23,10 @@ The problem Curator solves is the limited access to the Brooklyn Museum collecti
 | ----------------|
 | username        |
 
-| Artist          |
-| ----------------| 
-| name            |
-| dates           |
-| nationality     |
-
 | Artwork         |
 | ----------------| 
 | image_url       |
 | caption         |
-| file_source     |
-| series          |
 
 | Collection      |
 | ----------------| 
