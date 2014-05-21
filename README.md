@@ -8,6 +8,7 @@ rspec
 httparty  
 font-awesome  
 rails_12factor  
+sass
 
 skeleton
 
