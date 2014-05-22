@@ -1,17 +1,16 @@
 <h1>SEARCH RESULTS</h1>
-<h2><%= @artworks.count %>. LUCKY GUY!</h2>
+<h2>You have <%= @artworks.count %> results.</h2>
 <ul>
   <% @artworks.each do |art| %>
     <li>
       <div class='eight columns'>
-        <img src="<%= @image_url %>" alt="<%= @title %>">
+        <img src="<%= image_url %>">
         <p><%= art.title %></p>
         <p><%= art.object_date %></p>
         <p><%= art.medium %></p>
         <p><%= art.label %></p>
         <p><%= art.description %></p>
-        <p><%= art.bk_uri %></p>
-
+        <p><%= art.bk.uri %></p>
       </div>
       <%= form_for @artwork do |f| %>
       <%= f.hidden_field :caption, value: art.title %>
