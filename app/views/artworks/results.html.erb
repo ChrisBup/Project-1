@@ -4,13 +4,13 @@
   <% @artworks.each do |art| %>
     <li>
       <div class='eight columns'>
-        <img src="<%= image_url %>">
+        <img src="<%= art.image_uri %>">
         <p><%= art.title %></p>
         <p><%= art.object_date %></p>
         <p><%= art.medium %></p>
-        <p><%= art.label %></p>
-        <p><%= art.description %></p>
-        <p><%= art.bk.uri %></p>
+        <p><%= raw art.label %></p>
+        <p><%= raw art.description %></p>
+        <p><%= art.bk_uri %></p>
       </div>
       <%= form_for @artwork do |f| %>
       <%= f.hidden_field :caption, value: art.title %>

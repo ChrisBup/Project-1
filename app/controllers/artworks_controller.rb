@@ -10,6 +10,7 @@ end
 def results
   @artwork = Artwork.new
   @artworks = Artwork.find_in_bk(params[:artwork][:keyword])
+  Rails.logger.info @artworks.inspect
 end
 
 # POST /create artwork#create - (DB call to create)
