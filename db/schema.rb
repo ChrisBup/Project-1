@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620184406) do
+ActiveRecord::Schema.define(version: 20140620190020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20140620184406) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "artworks_collections", id: false, force: true do |t|
+    t.integer "artwork_id",    null: false
+    t.integer "collection_id", null: false
+  end
+
+  add_index "artworks_collections", ["artwork_id", "collection_id"], name: "index_artworks_collections_on_artwork_id_and_collection_id", using: :btree
+  add_index "artworks_collections", ["collection_id", "artwork_id"], name: "index_artworks_collections_on_collection_id_and_artwork_id", using: :btree
 
   create_table "collections", force: true do |t|
     t.integer "curator_id"

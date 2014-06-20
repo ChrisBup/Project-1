@@ -1,6 +1,6 @@
 class Curator < ActiveRecord::Base
-  has_many :artworks, through: :collections
   has_many :collections
+  has_many :artworks, through: :collections
   has_secure_password
 
   validates :username, presence: true
