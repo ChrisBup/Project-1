@@ -1,6 +1,5 @@
 class Artwork < ActiveRecord::Base
   has_many :curators, through: :collections
-  belongs_to :artist
 
   def self.find_in_bk(keyword)
     keyword = keyword.gsub(' ', '%20')
