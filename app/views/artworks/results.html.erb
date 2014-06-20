@@ -14,7 +14,7 @@
       </div>
       <%= form_for @artwork do |f| %>
       <%= f.hidden_field :caption, value: art.title %>
-      <%= f.hidden_field :image_url, value: art.bk_uri %>
+      <%= f.hidden_field :image_url, value: art.image_uri %>
       <%= f.submit "ADD TO YOUR COLLECTION" %>
       <% end %>
     </li>

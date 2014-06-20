@@ -1,7 +1,17 @@
 <h1><% @collection.name %></h1>
 
-<%= link_to "START ANOTHER COLLECTION", new_collection_path %>
+<%= link_to "START ANOTHER COLLECTION", new_curator_collection_path(current_curator) %>
 <br>
+
+<% @collection.artworks.each do |artwork| %>
+  <ul>
+    <li>
+     <img src="<%= artwork.image_url %>">
+     <p><%= artwork.caption %></p>
+    </li>
+  </ul>
+<% end %>
+
 
 <form action="/collections/<%= @collection.id %>/edit" method='put'>
   <%= token_tag %>
