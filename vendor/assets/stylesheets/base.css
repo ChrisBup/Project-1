@@ -282,3 +282,40 @@
 	.add-bottom { margin-bottom: 20px !important; }
 
 
+.space {
+	display: inline-block;
+	width:30px;
+	text-align: center;
+}
+
+.main-space {
+	display: inline-block;
+	width:60px;
+	text-align: center;
+}
+
+.lineup {
+	text-align: center;
+}
+
+.res-img {
+	width:200px;
+}
+
+.salon-wall {
+  margin-left: -200px;
+}
+
+.salon-img {
+  float: left;
+  padding: 25px;
+}
+
+.limit {
+	width: 400px;
+}
+
+#logotype {
+	color: white;
+	font-weight: bold;
+}

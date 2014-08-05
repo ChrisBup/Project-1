@@ -1,26 +1,22 @@
-<h1><% @collection.name %></h1>
+<h1><%= @collection.name %></h1>
 
-<%= link_to "START ANOTHER COLLECTION", new_curator_collection_path(current_curator) %>
 <br>
 
-<% @collection.artworks.each do |artwork| %>
-  <ul>
-    <li>
-     <img src="<%= artwork.image_url %>">
-     <p><%= artwork.caption %></p>
-    </li>
-  </ul>
-<% end %>
-
-
-<form action="/collections/<%= @collection.id %>/edit" method='put'>
-  <%= token_tag %>
-  <button type='submit'>RENAME YOUR COLLECTION</button>
-</form>
-<br>
-
-<form action="/collections/<%= @collection.id %>" method='post'>
-  <%= token_tag %>
-  <input type="hidden" name='_method' value='delete'>
-  <button type='submit'>DELETE COLLECTION</button>
-</form>
+<div class='fourteen columns'>
+  <div class='salon-wall'>
+    <% @collection.artworks.each do |artwork| %>
+    <div class='salon-img'>
+    <img src="<%= artwork.image_url %>">
+    <p class='limit'><%= artwork.caption %></p>
+    </div>
+    <% end %>
+  </div>
+  <div class="row"></div>
+  <div class='offset-by-three'>
+   <%= link_to "Add To Collection", new_artwork_path %>
+   <br>
+   <%= link_to "Edit Collection", edit_curator_collection_path(@collection.curator,@collection) %>
+   <br><br>
+   <%= link_to "Start Another Collection", new_curator_collection_path(@curator) %>
+ </div>
+ <br>

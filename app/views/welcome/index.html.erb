@@ -1,0 +1,20 @@
+<div class='lineup'>
+  <% if current_curator %>
+  <h3>Hi, <%= current_curator.username %></h3><br>
+  <% end %>
+
+  <br>
+  <h4>Welcome To</h4>
+  <h1>CURATOR</h1>
+  <br><br><br><br>
+
+  <% if current_curator %>
+  <%= link_to "Start A New Collection", new_curator_collection_path(current_curator) %>
+  <div class='space'></div>
+  <%= link_to "View Your Collections", curator_collections_path(current_curator) %>
+  <% else%>
+  <%= link_to "Become A Curator", new_curator_path %>
+  <div class='space'>or</div>
+  <%= link_to "Log-In", log_in_path %>
+  <% end %>
+</div>

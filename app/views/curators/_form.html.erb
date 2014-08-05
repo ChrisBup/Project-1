@@ -1,12 +1,22 @@
-<%= render 'errors' %>
-<%= form_for @curator do |f| %>
-  <p><%= f.label :username %>
-    <%= f.text_field :username %></p>
-  <p><%= f.label :password %>
-    <%= f.password_field :password %></p>
-  <p><%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %></p>
-  <p><%= f.label :terms_of_service %>
-    <%= f.check_box :terms_of_service %></p>
+<div class='offset-by-three'>
+  <%= render 'errors' %>
+  <%= form_for @curator do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.label :terms_of_service %>
+    <%= f.check_box :terms_of_service %>
+  </p>
   <%= f.submit %>
-<% end %>
+  <% end %>
+</div>

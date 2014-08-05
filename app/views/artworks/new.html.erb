@@ -1,8 +1,8 @@
 <h1>FIND ARTWORK</h1>
-<div>
-  <form class="center" action="/results" method='get'>
+  <form action="/results" method='get'>
     <%= token_tag %>
-    <input class="four columns offset-by-six" type="text" name='artwork[keyword]'>
+    <div class='offset-by-three'>
+    <input type="text" name='artwork[keyword]'>
     <input type="submit" value="SEARCH">
+    </div>
   </form>
-</div>

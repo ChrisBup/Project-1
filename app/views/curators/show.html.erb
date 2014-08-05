@@ -1,23 +1,8 @@
-<h1>Welcome, <%= @curator.username %></h1>
-<%= link_to "LOG-OUT", log_out_path, method: :delete %>
-
-<% if @collections.to_i > 0 %>
-  <h3>YOUR COLLECTIONS</h3>
-  <ul>
-    <% @collections.each do %>
-      <li>
-        <a href="curator_collections_path">
-         <%= @collection.name %>
-        </a>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= link_to "START A COLLECTION", new_curator_collection_path(@curator) %>
-
-<form action="/curators/<%= @curator.id %>/edit" method='put'>
-  <%= token_tag %>
-  <button type='submit'>RENAME CURATOR</button>
-</form>
-<br>
+<div class='offset-by-three'>
+  <p>Hi, <%= @curator.username %></p>
+  <%= link_to "Start A New Collection", new_curator_collection_path(@curator, @collection) %>
+  <br>
+  <%= link_to "View Collections", curator_collections_path(@curator) %>
+  <br>
+  <%= link_to "Log-Out", log_out_path, method: :delete %>
+</div>

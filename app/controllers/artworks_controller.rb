@@ -21,8 +21,8 @@ def create
   # get curator's first collection
   collection = current_curator.collections.first
   # add artwork to collection
-   artwork = Artwork.create artwork_params
-   collection.artworks << artwork
+  artwork = Artwork.create artwork_params
+  collection.artworks << artwork
   redirect_to curator_collection_path(current_curator, collection)
 end
 

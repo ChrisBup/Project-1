@@ -1,9 +1,22 @@
-<h1>YOUR COLLECTION</h1>
-
-<% @collections.each do |collection| %>
-  <ul>
-    <li>
-      <%= collection.name %>
-    </li>
-  </ul>
-<% end %>
+<h1>YOUR COLLECTIONS</h1>
+<br>
+<div class='offset-by-one'>
+  <h2>You have <%= @collections.length %> collections</h2>
+  <% if @collections.any? %>
+    <br>
+    <% @collections.each do |collection| %>
+      <ul>
+        <li>
+          <%= collection.name %>
+          <a href="#"></a>
+          <div class='space'>/</div>
+          <%= link_to "View", curator_collection_path(collection.curator,collection) %>
+          <div class='space'>/</div>
+          <%= link_to "Edit", edit_curator_collection_path(collection.curator,collection) %>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+  <br>
+  <%= link_to "Start A Collection", new_curator_collection_path(@curator) %>
+</div>

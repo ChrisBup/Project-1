@@ -1,6 +1,6 @@
 class BrooklynArtwork
   attr_accessor :title, :object_date, :medium, :label, :collection, :description,
-  :image_uri, :bk_uri, :artists
+  :image_uri, :bk_uri
 
   def initialize api_data
     @title = api_data["title"]
@@ -11,14 +11,5 @@ class BrooklynArtwork
     @description = api_data["description"]
     @image_uri = api_data["images"]["image"]["uri"]
     @bk_uri = api_data["uri"]
-    # @artists = api_data["artists"].map do |z|
-    #   binding.pry
-    #   {
-    #     name: z["name"],
-    #     dates: z["dates"]
-    #   }
-        # @artist_name = z["name"]
-        # @artist_dates = z["dates"]
-    #end # @artists map
   end # initialize
 end # BrooklynArtwork

@@ -1,5 +1,11 @@
 <nav>
+  <%= link_to "CURATOR", root_path, id: "logotype" %>
   <%= link_to "Browse Artwork", new_artwork_path %>
-  <%= link_to "View Collections", curators_path %>
-  <%= link_to "Become a Curator", new_curator_path %>
+  <% if current_curator %>
+  <%= link_to "View Collections", curator_collections_path(current_curator) %>
+  <%= link_to current_curator.username, curator_path(current_curator) %>
+  <% else%>
+  <%= link_to "Become A Curator", new_curator_path %>
+  <%= link_to "Log-In", log_in_path %>
+  <% end %>
 </nav>
