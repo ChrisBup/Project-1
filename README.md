@@ -18,7 +18,7 @@ So often we view art as just pictures on a wall—sometimes pleasant, sometimes 
 In a museum, we can can sometimes feel lost and struggle to make connections between the various categories of art we are presented with. Curator is your personal guide to the Brooklyn Museum, helping you plan your route through the space to find just the pieces you wanted to see along with a context for the work, deepening your appreciation for it.
 
 It also allows you to discover, save and share your favorite pieces from Brooklyn Museum's entire online collection of over 100,000 works of art and provides a way to enrich your visit to the Brooklyn Museum itself, connecting your digital experience with the physical space. When you are able to interact with art on a more personal level, you can then divine your own meaning from it and draw a fuller connection to it.
-
+test
 ## Data Model:
 
 | Curator         |
