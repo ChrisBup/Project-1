@@ -17,9 +17,7 @@
   <%= link_to "View Your Collections", curator_collections_path(current_curator) %>
   <% else%>
 
-  <div class='greeting-login'>
-    <%= link_to "AUTO-LOGIN FOR DEMO PURPOSES", curator_path(demo_curator) %>
-  </div>
+
   <br>
   <%= link_to "Become A Curator", new_curator_path %>
   <div class='space'>or</div>
