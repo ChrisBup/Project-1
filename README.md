@@ -13,7 +13,7 @@ skeleton
 
 ## Research/Concept
 
-Curator accesses Brooklyn Museum's collection of over 100,000 works of art to allow anyone to curate their very own art collection online. It allows people to discover, collect, and share artwork.
+So often we view art as just pictures on a wall—sometimes pleasant, sometimes confusing—but usually with little meaning or relevance to ourselves. However, art can serve a valuable purpose allowing people to understand themselves better and connect with their world in new ways. Curator provides a context and guide for experiencing art; one that is useful to experts and newcomers alike.
 
 The problem Curator solves is the limited access to the Brooklyn Museum collection in any given visit. By being able to search their entire archive, whether or not the piece is on view, as well as keep track of favorite pieces, one can curate their very own collection to appreciate and share.
 
