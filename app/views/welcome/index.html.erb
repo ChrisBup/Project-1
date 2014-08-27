@@ -15,9 +15,10 @@
     <div class='space'></div>
     <%= link_to "View Your Collections", curator_collections_path(current_curator) %>
   <% else%>
-    <div class='greeting-login'>
-      <%= link_to "AUTO-LOGIN FOR DEMO PURPOSES", session_demo_url %>
-    </div>
+      <%= link_to session_demo_url do %>
+        <div class='greeting-login'>AUTO-LOGIN FOR DEMO PURPOSES</div>
+      <% end %>
+    </a>
     <br>
     <%= link_to "Become A Curator", new_curator_path %>
     <div class='space'>or</div>
