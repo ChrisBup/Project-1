@@ -6,7 +6,7 @@
   <h4>Welcome To</h4>
   <h1>CURATOR</h1>
   <div  class='greeting'>
-  <h5>To use Curator, login, create a collection, search for artwork and add your favorites to your collection.</h5><br>
+  <h5>To use Curator, first login and create a collection. <br> Then, search for artwork and add your favorites.</h5><br>
   <h5>Curator was created by <a href="http://chrisheuberger.com">Chris Heuberger</a>.</h5><br>
   <h5>Special thanks to <a href="http://www.brooklynmuseum.com">The Brooklyn Museum</a>.</h5>
   </div>
@@ -17,7 +17,9 @@
   <%= link_to "View Your Collections", curator_collections_path(current_curator) %>
   <% else%>
 
-
+  <div class='greeting-login'>
+    <%= link_to "AUTO-LOGIN FOR DEMO PURPOSES", curator_path(demo_curator) %>
+  </div>
   <br>
   <%= link_to "Become A Curator", new_curator_path %>
   <div class='space'>or</div>
