@@ -1,5 +1,6 @@
 class CuratorsController < ApplicationController
 
+
   #     curators GET    /curators(.:format)          curators#index
   def index
     @curators = Curator.all

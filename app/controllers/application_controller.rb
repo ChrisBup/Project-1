@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_curator, :demo_curator
 
   def demo_curator
-    Curator.find_by_username('AutoLoginDemo')
+    Curator.demo_user
   end
 
   def current_curator

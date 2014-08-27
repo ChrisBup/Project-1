@@ -15,6 +15,13 @@ class SessionsController < ApplicationController
 
   end
 
+  def demo
+    curator = Curator.demo_user
+    session[:curator_id] = curator.id
+    redirect_to root_path, notice: "You're signed in as #{curator.username}."
+  end
+
+
   def destroy
     session[:curator_id] = nil
     redirect_to log_in_path, notice: "You're logged out."

@@ -2,7 +2,6 @@
   <% if current_curator %>
     <h3>Hi, <%= current_curator.username %></h3><br>
   <% end %>
-
   <h4>Welcome To</h4>
   <h1>CURATOR</h1>
   <div  class='greeting'>
@@ -17,12 +16,11 @@
     <%= link_to "View Your Collections", curator_collections_path(current_curator) %>
   <% else%>
     <div class='greeting-login'>
-      <%= link_to "AUTO-LOGIN FOR DEMO PURPOSES", curator_path(demo_curator) %>
+      <%= link_to "AUTO-LOGIN FOR DEMO PURPOSES", session_demo_url %>
     </div>
     <br>
     <%= link_to "Become A Curator", new_curator_path %>
     <div class='space'>or</div>
     <%= link_to "Log-In", log_in_path %>
   <% end %>
-
 </div>

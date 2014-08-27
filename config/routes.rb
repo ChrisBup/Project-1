@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'sessions/new' => 'sessions#new', as: 'log_in'
   post 'sessions' => 'sessions#create'
   get 'sessions/goodbye' => 'sessions#destroy'
+  get 'session/demo', to: 'sessions#demo'
   delete 'sessions' => 'sessions#destroy', as: 'log_out'
 
   get 'profiles' => 'profiles#index'

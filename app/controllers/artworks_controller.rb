@@ -11,7 +11,8 @@ end
 def results
   @collection = params[:collection_id] ? Collection.find(params[:collection_id]) : nil
   @artwork = Artwork.new
-  @artworks = Artwork.find_in_bk(params[:artwork][:keyword])
+  keyword = params[:artwork][:keyword].present? ? params[:artwork][:keyword] : "xxx"
+  @artworks = Artwork.find_in_bk(keyword)
 end
 
 # POST /create artwork#create - (DB call to create)
