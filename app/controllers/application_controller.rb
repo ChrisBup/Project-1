@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_curator, :demo_curator
 
-  def current_curator
-    Curator.find(session[:curator_id]) if session[:curator_id]
-  end
-
   def demo_curator
     Curator.find_by_username('AutoLoginDemo')
+  end
+
+  def current_curator
+    Curator.find(session[:curator_id]) if session[:curator_id]
   end
 
   def authorize
