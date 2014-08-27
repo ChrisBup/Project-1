@@ -1,6 +1,6 @@
 <nav>
   <%= link_to "CURATOR", root_path, id: "logotype" %>
-  <%= link_to "Browse Artwork", new_artwork_path %>
+  <%= link_to "Browse Artwork", search_path %>
   <% if current_curator %>
   <%= link_to "View Collections", curator_collections_path(current_curator) %>
   <%= link_to current_curator.username, curator_path(current_curator) %>

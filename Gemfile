@@ -43,6 +43,8 @@ gem 'font-awesome-rails'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
+ gem 'better_errors'
+ gem 'binding_of_caller'
  gem 'pry'
  gem 'pry-nav'
  gem 'rspec-rails'

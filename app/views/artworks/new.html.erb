@@ -1,6 +1,9 @@
 <h1>FIND ARTWORK</h1>
   <form action="/results" method='get'>
     <%= token_tag %>
+    <% if @collection %>
+      <%= hidden_field_tag :collection_id, @collection.id %>
+    <% end %>
     <div class='offset-by-three'>
     <input type="text" name='artwork[keyword]'>
     <input type="submit" value="SEARCH">

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :curators do
-    resources :collections
+    resources :collections do
+      resources :artworks
+    end
   end
-
-  resources :artworks, only: [:new, :create, :search, :results, :show]
 
   root 'welcome#index'
 

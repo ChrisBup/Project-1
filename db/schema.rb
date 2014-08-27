@@ -11,16 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620190020) do
+ActiveRecord::Schema.define(version: 20140826175131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "artworks", force: true do |t|
     t.string   "image_url"
-    t.string   "caption"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
+    t.text     "label"
+    t.text     "description"
+    t.string   "medium"
+    t.string   "object_date"
+    t.string   "bk_uri"
+    t.string   "bk_collection"
+    t.string   "location"
+    t.string   "artist_name"
+    t.string   "artist_nationality"
   end
 
   create_table "artworks_collections", id: false, force: true do |t|

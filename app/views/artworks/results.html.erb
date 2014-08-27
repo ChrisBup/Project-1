@@ -2,33 +2,49 @@
 <div class='offset-by-two'>
   <h2>You have <%= @artworks.count %> results.</h2>
 </div>
-  <br><br>
-  <ul>
-    <% @artworks.each do |art| %>
-    <li>
-        <img class='res-img' src="<%= art.image_uri %>">
-        <br>
-        <div class='ten columns'>
-        <h4>TITLE</h4>
-          <p><%= art.title %></p>
-        <h4>DATE</h4>
-          <p><%= art.object_date %></p>
-        <h4>MEDIUM</h4>
-          <p><%= art.medium %></p>
-        <h4>LABEL</h4>
-          <p><%= raw art.label %></p>
-        <h4>DESCRIPTION</h4>
-          <p><%= raw art.description %></p>
-        <p><a href="<%= art.bk_uri %>">Link To Artwork</a></p>
-      </div>
-      <% if current_curator %>
-        <%= form_for @artwork do |f| %>
-          <%= f.hidden_field :caption, value: art.title %>
-          <%= f.hidden_field :image_url, value: art.image_uri %>
-          <%= f.submit "ADD TO YOUR COLLECTION" %>
-        <% end %>
+<br><br>
+<ul>
+  <% @artworks.each do |art| %>
+  <li>
+    <img class='res-img' src="<%= art.image_uri %>">
+    <br>
+    <div class='ten columns'>
+      <h4>TITLE</h4>
+      <p><%= art.title %></p>
+      <h4>ARTIST</h4>
+      <p><%= art.artist_name %></p>
+      <p><%= art.artist_nationality %></p>
+      <h4>DATE</h4>
+      <p><%= art.object_date %></p>
+      <h4>MEDIUM</h4>
+      <p><%= art.medium %></p>
+      <h4>COLLECTION</h4>
+      <p><%= art.collection %></p>
+      <h4>LOCATION</h4>
+      <p><%= art.location %></p>
+      <h4>DESCRIPTION</h4>
+      <p><%= raw art.label %></p>
+      <p><%= raw art.description %></p>
+      <p><a href="<%= art.bk_uri %>">Link To Artwork</a></p>
+    </div>
+    <% if current_curator && @collection %>
+      <%= form_for [@collection.curator, @collection, @artwork] do |f| %>
+        <%= f.hidden_field :id, value: art.id %>
+        <%= f.hidden_field :location, value: art.location %>
+        <%= f.hidden_field :title, value: art.title %>
+        <%= f.hidden_field :image_url, value: art.image_uri %>
+        <%= f.hidden_field :label, value: art.label %>
+        <%= f.hidden_field :description, value: art.description %>
+        <%= f.hidden_field :medium, value: art.medium %>
+        <%= f.hidden_field :object_date, value: art.object_date %>
+        <%= f.hidden_field :bk_uri, value: art.bk_uri %>
+        <%= f.hidden_field :bk_collection, value: art.collection %>
+        <%= f.hidden_field :artist_name, value: art.artist_name %>
+        <%= f.hidden_field :artist_nationality, value: art.artist_nationality %>
+        <%= f.submit "ADD TO YOUR COLLECTION" %>
       <% end %>
-      <hr><br>
-    </li>
     <% end %>
-  </ul>
+    <hr><br>
+  </li>
+  <% end %>
+</ul>

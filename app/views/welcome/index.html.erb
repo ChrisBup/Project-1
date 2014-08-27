@@ -3,18 +3,27 @@
   <h3>Hi, <%= current_curator.username %></h3><br>
   <% end %>
 
-  <br>
   <h4>Welcome To</h4>
   <h1>CURATOR</h1>
-  <br><br><br><br>
-
+  <div  class='greeting'>
+  <h5>To use Curator, login, create a collection, search for artwork and add your favorites to your collection.</h5><br>
+  <h5>Curator was created by <a href="http://chrisheuberger.com">Chris Heuberger</a>.</h5><br>
+  <h5>Special thanks to <a href="http://www.brooklynmuseum.com">The Brooklyn Museum</a>.</h5>
+  </div>
+  <br><br>
   <% if current_curator %>
   <%= link_to "Start A New Collection", new_curator_collection_path(current_curator) %>
   <div class='space'></div>
   <%= link_to "View Your Collections", curator_collections_path(current_curator) %>
   <% else%>
+
+  <div class='greeting-login'>
+    <%= link_to "AUTO-LOGIN FOR DEMO PURPOSES", curator_path(demo_curator) %>
+  </div>
+  <br>
   <%= link_to "Become A Curator", new_curator_path %>
   <div class='space'>or</div>
   <%= link_to "Log-In", log_in_path %>
   <% end %>
+
 </div>

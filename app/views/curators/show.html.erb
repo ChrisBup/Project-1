@@ -1,5 +1,6 @@
 <div class='offset-by-three'>
-  <p>Hi, <%= @curator.username %></p>
+  <h3>Hi, <%= @curator.username %></h3>
+  <div class="row"></div>
   <%= link_to "Start A New Collection", new_curator_collection_path(@curator, @collection) %>
   <br>
   <%= link_to "View Collections", curator_collections_path(@curator) %>

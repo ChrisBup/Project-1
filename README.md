@@ -4,10 +4,10 @@
 
 Brooklyn Museum API
 
-rspec  
-httparty  
-font-awesome  
-rails_12factor  
+rspec
+httparty
+font-awesome
+rails_12factor
 
 skeleton
 
@@ -15,21 +15,33 @@ skeleton
 
 Curator accesses Brooklyn Museum's collection of over 100,000 works of art to allow anyone to curate their very own art collection online. It allows people to discover, collect, and share artwork.
 
-The problem Curator solves is the limited access to the Brooklyn Museum collection in any given visit. By being able to search their entire archive, whether or not the piece is on view, as well as keep track of favorite pieces, one can curate their very own collection to share.
+The problem Curator solves is the limited access to the Brooklyn Museum collection in any given visit. By being able to search their entire archive, whether or not the piece is on view, as well as keep track of favorite pieces, one can curate their very own collection to appreciate and share.
 
 ## Data Model:
 
 | Curator         |
 | ----------------|
 | username        |
+| password        |
 
-| Artwork         |
-| ----------------| 
-| image_url       |
-| caption         |
+| Artwork             |
+| --------------------|
+| image_url           |
+| id                  |
+| location            |
+| title               |
+| object_date         |
+| medium              |
+| label               |
+| collection          |
+| description         |
+| image_uri           |
+| uri                 |
+| artist_name         |
+| artist_nationality  |
 
 | Collection      |
-| ----------------| 
+| ----------------|
 | curator_id      |
 | artwork_id      |
 | name            |

@@ -3,20 +3,42 @@
 <br>
 
 <div class='fourteen columns'>
-  <div class='salon-wall'>
+  <div class='offset-by-one'>
     <% @collection.artworks.each do |artwork| %>
     <div class='salon-img'>
-    <img src="<%= artwork.image_url %>">
-    <p class='limit'><%= artwork.caption %></p>
+      <img src="<%= artwork.image_url %>">
+      <h4>TITLE</h4>
+        <p><%= artwork.title %></p>
+      <h4>ARTIST</h4>
+      <p><%= artwork.artist_name %></p>
+      <p><%= artwork.artist_nationality %></p>
+      <h4>DATE</h4>
+        <p><%= artwork.object_date %></p>
+      <h4>MEDIUM</h4>
+        <p><%= artwork.medium %></p>
+      <h4>COLLECTION</h4>
+      <p><%= artwork.bk_collection %></p>
+      <h4>LOCATION</h4>
+      <p><%= artwork.location %></p>
+      <h4>DESCRIPTION</h4>
+        <p><%= raw artwork.label %></p>
+        <p><%= raw artwork.description %></p>
+      <p><a href="<%= artwork.bk_uri %>">Link To Artwork</a></p>
+      <%= link_to "Remove Artwork", curator_collection_artwork_path(@collection.curator, @collection, artwork), method: :delete %>
+      <hr><br>
     </div>
     <% end %>
+    <div class="row"></div>
   </div>
-  <div class="row"></div>
   <div class='offset-by-three'>
-   <%= link_to "Add To Collection", new_artwork_path %>
-   <br>
-   <%= link_to "Edit Collection", edit_curator_collection_path(@collection.curator,@collection) %>
-   <br><br>
-   <%= link_to "Start Another Collection", new_curator_collection_path(@curator) %>
- </div>
- <br>
+    <%= link_to "Add To Collection", search_path(collection_id: @collection) %>
+    <br>
+    <%= link_to "Edit Collection", edit_curator_collection_path(@collection.curator, @collection) %>
+    <br>
+    <%= link_to "Delete Collection", curator_collection_path(@collection.curator, @collection), method: :delete %>
+    <br><br>
+    <%= link_to "Start Another Collection", new_curator_collection_path(@curator) %>
+    <br>
+  </div>
+</div>
+<br>
