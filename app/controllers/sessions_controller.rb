@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if curator && curator.authenticate(params[:password])
       session[:curator_id] = curator.id
-      redirect_to root_path, notice: "You're signed in as #{curator.username}."
+      redirect_to root_path
     else
       redirect_to log_in_path, alert: 'log-in fail'
     end
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
   def demo
     curator = Curator.demo_user
     session[:curator_id] = curator.id
-    redirect_to root_path, notice: "You're signed in as #{curator.username}."
+    redirect_to root_path
   end
 
 

@@ -7,14 +7,14 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get '/search' => 'artworks#new'
-  get '/results' => 'artworks#results'
+  get '/search', to: 'artworks#new'
+  get '/results', to: 'artworks#results'
 
-  get 'sessions/new' => 'sessions#new', as: 'log_in'
-  post 'sessions' => 'sessions#create'
-  get 'sessions/goodbye' => 'sessions#destroy'
+  get 'sessions/new', to: 'sessions#new', as: 'log_in'
+  post 'sessions', to: 'sessions#create'
+  get 'sessions/goodbye', to: 'sessions#destroy'
   get 'session/demo', to: 'sessions#demo'
-  delete 'sessions' => 'sessions#destroy', as: 'log_out'
+  delete 'sessions', to: 'sessions#destroy', as: 'log_out'
 
-  get 'profiles' => 'profiles#index'
+  get 'profiles', to: 'profiles#index'
 end
